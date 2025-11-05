@@ -1,0 +1,63 @@
+# --- Python build / bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test / coverage / tooling caches
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.tox/
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# --- Project-specific stuff ---
+# Environment & secrets
+.env
+.env.*
+!.env.example   # keep a template if you create one
+
+# Local databases
+cloudsense.db
+*.sqlite
+*.sqlite3
+
+# Ngrok (if you ever save config/tunnels in repo dir)
+.ngrok/
+ngrok.yml
+
+# Docker
+# (keep Dockerfile and docker-compose.yml, just ignore local volumes if any)
+docker-data/

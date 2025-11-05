@@ -1,0 +1,21 @@
+services:
+  redis:
+    image: redis:7
+    ports: ["6379:6379"]
+
+  worker:
+    image: python:3.11-slim
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    env_file:
+      - ./.env                # ok to load shared vars
+    environment:
+      REDIS_HOST: redis       # <— override so container uses service DNS
+      REDIS_PORT: "6379"
+      DB_PATH: /workspace/cloudsense.db
+      PYTHONUNBUFFERED: "1"
+    command: bash -lc "pip install -r requirements.txt && rq worker reviews"
+    depends_on:
+      - redis
+    restart: unless-stopped
