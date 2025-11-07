@@ -1,3 +1,4 @@
+# 2
 def calculate_total(prices, tax):
 total = 0
   for p in prices:
