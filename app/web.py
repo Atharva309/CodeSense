@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
 from app.repo import (
@@ -17,6 +18,7 @@ from app.repo import (
 from app.worker import enqueue_review
 from app.webhook import router as webhook_router
 from app.github import get_file_at_sha
+from app.api import api_router
 
 load_dotenv()
 
@@ -29,7 +31,24 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="CloudSense (local)", lifespan=lifespan)
 
+# Add CORS middleware - MUST be added before routes
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:5173",  # Vite default port
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+)
+
+# Include routers
 app.include_router(webhook_router)
+app.include_router(api_router)
 
 
 @app.get("/events", response_class=HTMLResponse)

@@ -61,3 +61,5 @@ ngrok.yml
 # Docker
 # (keep Dockerfile and docker-compose.yml, just ignore local volumes if any)
 docker-data/
+
+.md 
