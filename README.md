@@ -377,5 +377,5 @@ MIT License - See LICENSE file for details
 ## 🙏 Acknowledgments
 
 - Course: DTSC-5253 Data Scale Computing, University of Colorado Boulder
-- Instructor: Dr. Michael Elgood
+- Instructor: Eric Goodman
 - Technologies: AWS, OpenAI, GitHub, FastAPI, React, PostgreSQL
