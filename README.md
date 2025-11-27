@@ -1,0 +1,109 @@
+# --- Python build / bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test / coverage / tooling caches
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.tox/
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# --- Project-specific stuff ---
+# Environment & secrets
+.env
+.env.*
+!.env.example   # keep a template if you create one
+
+# Local databases
+cloudsense.db
+*.sqlite
+*.sqlite3
+
+# Ngrok (if you ever save config/tunnels in repo dir)
+.ngrok/
+ngrok.yml
+
+# Docker
+# (keep Dockerfile and docker-compose.yml, just ignore local volumes if any)
+# Docker
+# (keep Dockerfile and docker-compose.yml, just ignore local volumes if any)
+docker-data/
+
+# Terraform
+infrastructure/terraform/.terraform/
+infrastructure/terraform/.terraform.lock.hcl
+infrastructure/terraform/terraform.tfstate
+infrastructure/terraform/terraform.tfstate.backup
+infrastructure/terraform/terraform.tfvars
+infrastructure/terraform/*.tfplan
+infrastructure/terraform/crash.log
+infrastructure/terraform/crash.*.log
+
+# Generated documentation (AI-generated tracking files)
+ARCHITECTURE.md
+AUTHENTICATION-COMPLETE.md
+AWS-ARCHITECTURE.md
+AWS-DEPLOYMENT-COMPLETE.md
+AWS-DEPLOYMENT-GUIDE.md
+AWS-READY-CONSIDERATIONS.md
+AWS-WORKER-GUIDE.md
+CORS-FIX.md
+IMPLEMENTATION-PROGRESS.md
+LAMBDA-MIGRATION-COMPLETE.md
+LOCAL-DEVELOPMENT.md
+QUICK-START-AWS.md
+QUICK-START.md
+README-DEPLOYMENT.md
+RESUME-PROJECT-BULLETS.md
+RESUME-PROJECT-DESCRIPTION.md
+RESUME-PROJECT-SHORT.md
+USER-AUTHENTICATION-PLAN.md
+frontend/RESTART-DEV.md
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/lambda-env.json
+
+# Build artifacts
+artifacts/
+build/api-lambda/
+
+# Lambda deployment packages
+*.zip
